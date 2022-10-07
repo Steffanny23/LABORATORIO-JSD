@@ -13,7 +13,7 @@ const crearArchivo = async(nombre, montofinanciamiento, meses, tasaInteres) => {
         console.log(meses);
         console.log(tasaInteres);
         //tiempo 
-        let date = new Date();
+
 
         /* let messiguiente = date.setMonth(date.getMonth() + 1);
         console.log(messiguiente); */
@@ -32,11 +32,11 @@ const crearArchivo = async(nombre, montofinanciamiento, meses, tasaInteres) => {
 
         let saldoBase = montofinanciamiento;
         for (let i = 0; i < meses; i++) {
-            date.setMonth(date.getMonth() + 1);
+            
             let fechaPosion = new Date(date);
             let _saldoDespues = saldoBase - interesMensual;
             let _cuotaPago = interesMensual + capitalMesAbono;
-            let _mesPago = listaMeses[fechaPosion.getMonth()];
+            
 
 
             //sumar una posicion
@@ -49,7 +49,7 @@ const crearArchivo = async(nombre, montofinanciamiento, meses, tasaInteres) => {
                 coutaCapital: capitalMesAbono.toFixed(2),
                 coutaPago: _cuotaPago.toFixed(2),
                 pagoMes: _mesPago,
-                fechaPago: fechaPosion
+            
 
             }
             listaPagos.push(newItem);
