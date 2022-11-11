@@ -1,0 +1,26 @@
+extends layout.pug
+
+block hero
+    section.hero.is-dark.is-bold
+        .hero-body
+            .container
+                h1.title Préstamos STEFF
+                h2.subtitle Encuentra los mejores carros al mejor precio
+
+block content
+    .container(style="flex:1; padding:50px 0;")
+        h2.title Vehículos
+        .columns.is-multiline
+            each vehiculo in vehiculos
+                .column.is-one-quarter
+                    .card(style="overflow:hidden; border-radius:5px")
+                        .card-image
+                            figure.image(style="height: 190px" )
+                                img(src= vehiculo.imagen style="height:100%; object-fit:cover; object-position:50% 30%")
+                        .card-content
+                            h1.title= vehiculo.nombre
+                            .button.is-fullwidth.is-primary   
+                                span.icon
+                                    i.fas.fa-shopping-cart   
+                                span Add 
+                                    strong= `${vehiculo.precio}USD`

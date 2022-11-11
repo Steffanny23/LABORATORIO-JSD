@@ -1,0 +1,26 @@
+extends layout.pug
+
+block hero
+    section.hero.is-dark.is-bold
+        .hero-body
+            .container
+                h1.title Préstamos STEFF
+                h2.subtitle Ingreso de informacion de clientes
+
+block content
+    .container(style="flex:1; padding:50px 0;")
+        h2.title cliente
+        .columns.is-multiline
+            each cliente in cliente
+                .column.is-one-quarter
+                    .card(style="overflow:hidden; border-radius:5px")
+                        .card-image
+                            figure.image(style="height: 190px" )
+                                img(src= cliente.imagen style="height:100%; object-fit:cover; object-position:50% 30%")
+                        .card-content
+                            h1.title= cliente.nombre
+                            .button.is-fullwidth.is-primary   
+                                span.icon
+                                    i.fas.fa-shopping-cart   
+                                span Add 
+                                    strong= `${cliente.precio}USD`//prueba, despues cambiar datos
